@@ -4,22 +4,22 @@
 
 **[English](https://github.com/zuvola/flutter_mapkit_js/blob/master/README.md), [日本語](https://github.com/zuvola/flutter_mapkit_js/blob/master/README_jp.md)**
 
-A Flutter package that provides integration with MapKit JS, allowing you to embed interactive maps in your Flutter web applications.
+MapKit JSとの統合を提供するFlutterパッケージで、Flutterウェブアプリケーションにインタラクティブな地図を埋め込むことができます。
 
 ## Features
 
-- Initialize and configure MapKit JS.
-- Add and manage map annotations.
-- Listen to map events such as region changes, zoom changes, and more.
+- MapKit JS の初期化と設定。
+- マップアノテーションの追加と管理。
+- 地域の変更、ズームの変更などのマップイベントを受け取れます。
 
 ## Installation
 
-Add `flutter_mapkit_js` to your `pubspec.yaml` file:
+pubspec.yaml`ファイルに `flutter_mapkit_js` を追加してください。
 
 ## Usage
 
 ### Initialize MapKit JS
-To initialize MapKit JS, you need to provide a token through a callback function. Optionally, you can provide a list of libraries to load and a callback for initialization events.
+MapKit JS を初期化するには、コールバック関数を通してトークンを提供する必要があります。オプションで、ロードするライブラリのリストと初期化イベントのコールバックを指定することもできます。
 
 ```dart
 import 'package:flutter_mapkit_js/flutter_mapkit_js.dart';
@@ -39,7 +39,7 @@ void main() {
 ```
 
 ### Embed a Map in Your Widget
-You can use the MapKitMap widget to embed a map in your Flutter application.
+MapKitMapウィジェットを使ってFlutterアプリケーションに地図を埋め込むことができます。
 
 ```dart
 import 'package:flutter/material.dart';
@@ -67,7 +67,7 @@ class MyApp extends StatelessWidget {
 ```
 
 ### Adding Annotations
-You can add annotations to the map using the MapKitMapController.
+MapKitMapController を使用してマップにアノテーションを追加できます。
 
 ```dart
 void _onMapCreated(MapKitMapController controller) {
@@ -79,7 +79,7 @@ void _onMapCreated(MapKitMapController controller) {
 ```
 
 ### Observing Map Events
-You can listen for map events using the MapKitMapController.
+MapKitMapController を使ってマップイベントを受け取ることができます。
 
 ```dart
 void _onMapCreated(MapKitMapController controller) {
@@ -93,7 +93,8 @@ void _onMapCreated(MapKitMapController controller) {
 ```
 
 ### Others
-Call MapKitJS functions directly from `controller.map`.
+
+`controller.map`から直接MapKitJSの機能を呼び出してください。
 
 ```dart
 void _onMapCreated(MapKitMapController controller) {
@@ -103,5 +104,5 @@ void _onMapCreated(MapKitMapController controller) {
 
 ## Contributing
 
-Contributions are welcome! Please open an issue or submit a pull request on GitHub.
+コントリビュートを歓迎します！GitHubでissueを開くか、プルリクエストを提出してください。
 
