@@ -53,6 +53,9 @@ class _MyHomePageState extends State<MyHomePage> {
         (Coordinate coordinate, AnnotationConstructorOptions? options) {
       return web.HTMLDivElement()..textContent = "Hello, MapKit!";
     });
+
+    _controller?.addMarkerAnnotation(37.7749, -122.4194, 'San Francisco',
+        subtitle: 'City by the Bay', color: Colors.blue);
   }
 
   @override

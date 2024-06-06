@@ -1,4 +1,5 @@
 import 'dart:js_interop';
+import 'dart:ui';
 
 import 'package:mapkit_js/mapkit_js.dart' as mapkit;
 import 'package:web/web.dart' as web;
@@ -42,6 +43,34 @@ mixin AnnotationMixin on MapKitMapControllerBase {
           return factory(coordinate, options);
         }.toJS,
         null);
+    map.addAnnotation(annotation);
+    return annotation;
+  }
+
+  /// Adds a marker annotation to the map at the specified latitude and longitude.
+  ///
+  /// The [latitude] and [longitude] parameters specify the location for the annotation.
+  /// The [title] parameter specifies the title of the annotation.
+  /// The [subtitle] parameter specifies an optional subtitle for the annotation.
+  /// The [color] parameter specifies an optional color for the annotation.
+  ///
+  /// Returns the created [mapkit.MarkerAnnotation] object.
+  ///
+  /// Example usage:
+  /// ```dart
+  /// controller.addMarkerAnnotation(37.7749, -122.4194, 'San Francisco',
+  ///     subtitle: 'City by the Bay', color: Colors.blue);
+  /// ```
+  mapkit.Annotation addMarkerAnnotation(
+      double latitude, double longitude, String title,
+      {String? subtitle, Color? color}) {
+    final coordinate = mapkit.Coordinate(latitude, longitude);
+    final annotation = mapkit.MarkerAnnotation(coordinate, null);
+    annotation.title = title;
+    if (subtitle != null) annotation.subtitle = subtitle;
+    if (color != null) {
+      annotation.color = '#${color.value.toRadixString(16).substring(2, 8)}';
+    }
     map.addAnnotation(annotation);
     return annotation;
   }
