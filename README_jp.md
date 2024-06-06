@@ -71,9 +71,29 @@ MapKitMapController を使用してマップにアノテーションを追加で
 
 ```dart
 void _onMapCreated(MapKitMapController controller) {
+  controller.addMarkerAnnotation(37.7749, -122.4194, 'San Francisco',
+      subtitle: 'City by the Bay', color: Colors.blue);
+}
+```
+
+カスタマイズアノテーションの追加もできます。
+
+```dart
+void _onMapCreated(MapKitMapController controller) {
   controller.addAnnotation(37.7749, -122.4194, (coordinate, options) {
     // Create and return a custom HTML element for the annotation
     return web.HTMLDivElement()..textContent = "Hello, San Francisco!";
+  });
+}
+```
+
+### The search service
+MapKitMapController を使用してマップ上のポイントを検索できます。
+
+```dart
+void _onMapCreated(MapKitMapController controller) {
+  controller.searchCurrentArea('restaurant').then((response) {
+    // Process search results
   });
 }
 ```
