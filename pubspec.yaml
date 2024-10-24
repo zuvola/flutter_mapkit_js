@@ -1,6 +1,6 @@
 name: flutter_mapkit_js
 description: "A Flutter package that provides integration with MapKit JS, allowing you to embed interactive maps in your Flutter web applications."
-version: 0.2.0
+version: 0.2.1
 homepage: https://github.com/zuvola/flutter_mapkit_js
 
 environment:
@@ -10,13 +10,13 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  mapkit_js: ^0.3.0
+  mapkit_js: ^0.4.0
 
-  web: ^0.5.1
+  web: ^1.0.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^3.0.0
+  flutter_lints: ^4.0.0
 
 flutter:
